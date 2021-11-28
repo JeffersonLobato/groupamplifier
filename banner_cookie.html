@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <script async src="AQUI VAI O LINK FORNECIDO NA TAG DO GOOGLE ANALITICS"></script>
+
+    <script>
+
+        function aceitarCookie(){
+            sessionStorage.setItem('cookie', 'aceito')
+            let banner = document.getElementById('banner-cookie')
+            banner.style.display = 'none'
+
+            let el = document.getElementById('fechar-cookie')
+            let el2 = document.getElementById('aceitar-cookie')
+            let el3 = document.getElementById('recusar-cookie')
+    
+            if(sessionStorage.cookie === 'aceito'){
+                
+                AQUI VAI A TAG DO GOOGLE ANALITICS
+            
+                }
+
+            }
+
+
+
+        function recusarCookie(){
+            sessionStorage.setItem('cookie', 'recusado')
+            let banner = document.getElementById('banner-cookie')
+            banner.style.display = 'none'
+        }
+
+        window.addEventListener("load", function() {
+            if(sessionStorage.cookie){
+                let banner = document.getElementById('banner-cookie')
+                banner.style.display = 'none'
+            }else{
+                let banner = document.getElementById('banner-cookie')
+                banner.style.display = 'block'
+                banner.style.opacity = '1'
+            }
+        })
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id='banner-cookie' class='banner-cookie'>
+        <button id='fechar-cookie' class='fechar-banner-cookie' onclick="recusarCookie()"><span>x</span></button>
+        <h3>Aviso de privacidade!</h3>
+        <p>Este site pode armazenar cookies no navegador para melhor expediência do usuário.</p>
+        <p>Você permite o armazenamento de cookies em seu navegador?</p>
+        <div class='botao-cookie'>
+            <button id='aceitar-cookie' onclick="aceitarCookie()">ACEITAR</button>
+            <button id='recusar-cookie' onclick="recusarCookie()">RECUSAR</button>
+        </div>
+        
+    </div>
+</body>
+
+</html>
